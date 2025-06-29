@@ -1,0 +1,20 @@
+# Backend specific ignores
+node_modules/
+dist/
+build/
+*.log
+.env
+.env.local
+uploads/
+temp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+*.lcov
+
+# OS
+.DS_Store
+Thumbs.db

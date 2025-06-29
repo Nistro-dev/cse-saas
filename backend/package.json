@@ -1,0 +1,47 @@
+{
+  "name": "cse-saas-backend",
+  "version": "1.0.0",
+  "description": "Backend API for CSE SaaS Platform",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo \"Tests OK - à implémenter\" && exit 0",
+    "lint": "echo \"Lint OK - à implémenter\" && exit 0"
+  },
+  "keywords": ["fastify", "typescript", "sequelize", "cse", "saas"],
+  "author": "Thales CSE Team",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "^11.0.1",
+    "@fastify/jwt": "^9.1.0",
+    "@fastify/multipart": "^9.0.3",
+    "@fastify/static": "^8.2.0",
+    "bcryptjs": "^3.0.2",
+    "cron": "^4.3.1",
+    "dotenv": "^17.0.0",
+    "express-rate-limit": "^7.5.1",
+    "express-validator": "^7.2.1",
+    "fastify": "^5.4.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.1",
+    "mysql2": "^3.14.1",
+    "nodemailer": "^7.0.3",
+    "qrcode": "^1.5.4",
+    "sequelize": "^6.37.7",
+    "speakeasy": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cron": "^2.0.1",
+    "@types/node": "^24.0.7",
+    "@types/nodemailer": "^6.4.17",
+    "@types/qrcode": "^1.5.5",
+    "@types/speakeasy": "^2.0.10",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

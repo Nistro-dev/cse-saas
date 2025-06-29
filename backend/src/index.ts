@@ -3,6 +3,7 @@ import cors from '@fastify/cors';
 import jwt from '@fastify/jwt';
 import cookie from '@fastify/cookie';
 import multipart from '@fastify/multipart';
+
 import { config } from 'dotenv';
 
 // Charger les variables d'environnement
@@ -11,10 +12,13 @@ config();
 const server = fastify({
   logger: {
     level: process.env.LOG_LEVEL || 'info',
-    transport: process.env.NODE_ENV === 'development' ? {
-      target: 'pino-pretty'
-    } : undefined
-  }
+    transport:
+      process.env.NODE_ENV === 'development'
+        ? {
+            target: 'pino-pretty',
+          }
+        : undefined,
+  },
 });
 
 // Enregistrement des plugins
@@ -22,7 +26,7 @@ async function buildApp() {
   // CORS
   await server.register(cors, {
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-    credentials: true
+    credentials: true,
   });
 
   // JWT
@@ -30,8 +34,8 @@ async function buildApp() {
     secret: process.env.JWT_SECRET || 'super-secret-key-change-in-production',
     cookie: {
       cookieName: 'token',
-      signed: false
-    }
+      signed: false,
+    },
   });
 
   // Cookies
@@ -42,18 +46,18 @@ async function buildApp() {
 
   // Routes de base
   server.get('/api/health', async (request, reply) => {
-    return { 
-      status: 'healthy', 
+    return {
+      status: 'healthy',
       timestamp: new Date().toISOString(),
-      environment: process.env.NODE_ENV || 'development'
+      environment: process.env.NODE_ENV || 'development',
     };
   });
 
   server.get('/api', async (request, reply) => {
-    return { 
+    return {
       message: 'CSE SaaS API v1.0',
       docs: '/api/docs',
-      health: '/api/health'
+      health: '/api/health',
     };
   });
 
@@ -64,15 +68,14 @@ async function buildApp() {
 async function start() {
   try {
     const app = await buildApp();
-    
+
     const port = Number(process.env.PORT) || 3000;
     const host = process.env.HOST || '0.0.0.0';
-    
+
     await app.listen({ port, host });
-    
+
     console.log(`🚀 Server ready at http://${host}:${port}`);
     console.log(`📊 Health check: http://${host}:${port}/api/health`);
-    
   } catch (err) {
     console.error('❌ Error starting server:', err);
     process.exit(1);

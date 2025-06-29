@@ -8,7 +8,8 @@ export const validateEmail = (email: string): boolean => {
 };
 
 export const formatDate = (date: Date): string => {
-  return date.toISOString().split('T')[0] ?? '';
+  const formatted = date.toISOString().split('T')[0];
+  return formatted ?? '';
 };
 
 export const generateRandomCode = (length: number = 8): string => {

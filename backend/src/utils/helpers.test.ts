@@ -27,7 +27,7 @@ describe('Helpers Utils', () => {
     test('should handle different dates correctly', () => {
       const date1 = new Date('2023-01-01T00:00:00.000Z');
       const date2 = new Date('2023-12-31T23:59:59.999Z');
-      
+
       expect(formatDate(date1)).toBe('2023-01-01');
       expect(formatDate(date2)).toBe('2023-12-31');
     });
@@ -49,7 +49,7 @@ describe('Helpers Utils', () => {
     test('should generate different codes', () => {
       const code1 = generateRandomCode();
       const code2 = generateRandomCode();
-      
+
       expect(code1).not.toBe(code2);
     });
   });

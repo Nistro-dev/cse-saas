@@ -10,15 +10,15 @@ describe('Server Health Check', () => {
 
   beforeAll(async () => {
     app = fastify({
-      logger: false // Disable logging during tests
+      logger: false, // Disable logging during tests
     });
 
     // Register basic health route
     app.get('/api/health', async () => {
-      return { 
-        status: 'healthy', 
+      return {
+        status: 'healthy',
         timestamp: new Date().toISOString(),
-        environment: 'test'
+        environment: 'test',
       };
     });
 
@@ -32,11 +32,11 @@ describe('Server Health Check', () => {
   test('should respond to health check', async () => {
     const response = await app.inject({
       method: 'GET',
-      url: '/api/health'
+      url: '/api/health',
     });
 
     expect(response.statusCode).toBe(200);
-    
+
     const body = JSON.parse(response.body);
     expect(body.status).toBe('healthy');
     expect(body.environment).toBe('test');
@@ -46,7 +46,7 @@ describe('Server Health Check', () => {
   test('should return 404 for unknown routes', async () => {
     const response = await app.inject({
       method: 'GET',
-      url: '/api/unknown'
+      url: '/api/unknown',
     });
 
     expect(response.statusCode).toBe(404);

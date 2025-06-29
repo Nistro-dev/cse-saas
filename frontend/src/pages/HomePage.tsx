@@ -1,4 +1,4 @@
-import { ChevronRight, Users, Package, Calendar, BarChart3 } from 'lucide-react'
+import { ChevronRight, Users, Package, Calendar, BarChart3 } from 'lucide-react';
 
 const HomePage = () => {
   return (
@@ -13,20 +13,27 @@ const HomePage = () => {
               </div>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+              >
                 Produits
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+              >
                 Réservations
               </a>
-              <a href="#" className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium"
+              >
                 Profil
               </a>
             </nav>
             <div className="flex items-center space-x-4">
-              <button className="btn-primary">
-                Se connecter
-              </button>
+              <button className="btn-primary">Se connecter</button>
             </div>
           </div>
         </div>
@@ -41,8 +48,8 @@ const HomePage = () => {
               <span className="block text-primary-200">de nouvelle génération</span>
             </h1>
             <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-              Gérez facilement les réservations de matériel de votre CSE avec notre plateforme moderne, 
-              sécurisée et intuitive.
+              Gérez facilement les réservations de matériel de votre CSE avec notre plateforme
+              moderne, sécurisée et intuitive.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary-700 hover:bg-primary-50 font-semibold py-3 px-8 rounded-lg transition-colors duration-200">
@@ -61,9 +68,7 @@ const HomePage = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Fonctionnalités principales
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Fonctionnalités principales</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Découvrez tous les outils nécessaires pour gérer efficacement votre CSE
             </p>
@@ -75,9 +80,7 @@ const HomePage = () => {
               <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Users className="w-6 h-6 text-primary-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Gestion utilisateurs
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Gestion utilisateurs</h3>
               <p className="text-gray-600 text-sm">
                 Gérez les comptes, rôles et permissions en toute sécurité
               </p>
@@ -88,9 +91,7 @@ const HomePage = () => {
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Package className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Catalogue produits
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Catalogue produits</h3>
               <p className="text-gray-600 text-sm">
                 Organisez et présentez votre matériel avec photos et descriptions
               </p>
@@ -101,9 +102,7 @@ const HomePage = () => {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Calendar className="w-6 h-6 text-blue-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Réservations
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Réservations</h3>
               <p className="text-gray-600 text-sm">
                 Système de réservation intelligent avec calendrier intégré
               </p>
@@ -114,9 +113,7 @@ const HomePage = () => {
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <BarChart3 className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Statistiques
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Statistiques</h3>
               <p className="text-gray-600 text-sm">
                 Tableau de bord complet avec métriques et rapports
               </p>
@@ -148,7 +145,7 @@ const HomePage = () => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
